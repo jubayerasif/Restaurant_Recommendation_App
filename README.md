@@ -1,5 +1,4 @@
 ![Project Screenshot](project-ss.png)
-
  # Restaurant Recommendation App
 
 This Node.js Express app allows users to view a list of restaurants, recommend new restaurants, and view a confirmation page after submitting a recommendation.
