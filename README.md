@@ -11,7 +11,7 @@ This Node.js Express app allows users to view a list of restaurants, recommend n
 Clone the repository:
 
 ```
-git clone https://github.com/your-username/restaurant-recommendation-app.git
+git clone https://github.com/jubayerasif/Restaurant_Recommendation_App.git
 ```
 
 Install the dependencies:
