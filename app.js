@@ -33,11 +33,10 @@ app.get("/restaurants/:id", function (req, res) {
 
   for(const restaurant of storedRestaurants) {
     if(restaurant.id === restaurantId){
-      return  res.render("restaurant-detail", { rid: restaurantId });
+      return  res.render("restaurant-detail", { restaurant : restaurant });
     }
   }
 
-  
 });
 app.get("/recommend", function (req, res) {
   res.render("recommend");
