@@ -13,16 +13,15 @@ form {
   margin-bottom: 0.75rem;
 }
 
+label {
+  color: rgb(80, 57, 7);
+  margin-bottom: 0.25rem;
+}
 label,
 input,
 textarea {
   display: block;
   width: 100%;
-}
-
-label {
-  color: rgb(80, 57, 7);
-  margin-bottom: 0.25rem;
 }
 
 input,
@@ -35,7 +34,6 @@ textarea {
   color: rgb(121, 85, 7);
   box-sizing: border-box;
 }
-
 input:focus,
 textarea:focus {
   background-color: rgb(252, 234, 197);
@@ -49,7 +47,6 @@ button {
   color: white;
   border: 1px solid rgb(202, 158, 62);
 }
-
 button:hover {
   background-color: rgb(202, 141, 62);
 }
