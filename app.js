@@ -1,4 +1,4 @@
-const fs = require("fs").promises;
+const fs = require("fs");
 const path = require("path");
 const express = require("express");
 const uuid = require("uuid");
@@ -13,19 +13,16 @@ app.get("/", function (req, res) {
   res.render("index");
 });
 
-app.get("/restaurants", async function (req, res) {
-  try {
-    const filePath = path.join(__dirname, "data", "restaurants.json");
-    const fileData = await fs.readFile(filePath);
-    const storedRestaurants = JSON.parse(fileData);
-    res.render("restaurants", {
-      numberOfRestaurants: storedRestaurants.length,
-      restaurants: storedRestaurants,
-    });
-  } catch (error) {
-    console.error("Error reading restaurant data:", error);
-    res.status(500).send("Internal Server Error");
-  }
+app.get("/restaurants", function (req, res) {
+  const filePath = path.join(__dirname, "data", "restaurants.json");
+
+  const fileData = fs.readFileSync(filePath);
+  const storedRestaurants = JSON.parse(fileData);
+
+  res.render("restaurants", {
+    numberOfRestaurants: storedRestaurants.length,
+    restaurants: storedRestaurants,
+  });
 });
 
 app.get("/restaurants/:id", function (req, res) {
@@ -37,17 +34,18 @@ app.get("/restaurants/:id", function (req, res) {
 
   for(const restaurant of storedRestaurants) {
     if(restaurant.id === restaurantId){
-      return  res.render("restaurant-detail", { restaurant : restaurant });
+      return  res.render("restaurant-detail", { restaurant: restaurant });
     }
   }
 
+  res.render("404");
 });
-
 app.get("/recommend", function (req, res) {
   res.render("recommend");
 });
 app.post("/recommend", function (req, res) {
   const restaurant = req.body;
+  restaurant.id = uuid.v4();
   const filePath = path.join(__dirname, "data", "restaurants.json");
 
   const fileData = fs.readFileSync(filePath);
@@ -66,5 +64,9 @@ app.get("/confirm", function (req, res) {
 
 app.get("/about", function (req, res) {
   res.render("about");
+});
+
+app.use(function (req, res) {
+  res.render('404');
 });
 app.listen(3000);
