@@ -1,5 +1,6 @@
 [
   {
+    "id": "r1",
     "name": "Test",
     "address": "Test street 5, Testcity",
     "cuisine": "Italian",
@@ -7,6 +8,7 @@
     "description": "It's awesome!"
   },
   {
+    "id": "r2",
     "name": "Test 2",
     "address": "Test street 10, Testcity 2",
     "cuisine": "Indian",
@@ -14,6 +16,7 @@
     "description": "It's also amazing!"
   },
   {
+    "id": "r3",
     "name": "Restaurant 3",
     "address": "Awesome street 5, Mycity",
     "cuisine": "German",
@@ -21,6 +24,7 @@
     "description": "It's amazing! Of course!"
   },
   {
+    "id": "r4",
     "name": "Taj Hotel",
     "address": "Agra, India",
     "cuisine": "Indian",
