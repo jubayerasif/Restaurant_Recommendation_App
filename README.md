@@ -99,3 +99,8 @@ app.get("/restaurants", function (req, res) {
 
   const fileData = fs.readFileSync(filePath);
   const storedRestaurants = JSON.parse(fileData);
+```
+### Author
+```
+Jubayer Hasan Asif
+```
