@@ -40,20 +40,17 @@ app.get("/restaurants/:id", function (req, res) {
 
   res.status(404).render("404");
 });
+
 app.get("/recommend", function (req, res) {
   res.render("recommend");
 });
 app.post("/recommend", function (req, res) {
   const restaurant = req.body;
   restaurant.id = uuid.v4();
-  const filePath = path.join(__dirname, "data", "restaurants.json");
+  const restaurants = getStoredRestaurants();
 
-  const fileData = fs.readFileSync(filePath);
-  const storedRestaurants = JSON.parse(fileData);
-
-  storedRestaurants.push(restaurant);
-
-  fs.writeFileSync(filePath, JSON.stringify(storedRestaurants));
+  restaurants.push(restaurant);
+  storeRestaurants.push(restaurants);
 
   res.redirect("/confirm");
 });
