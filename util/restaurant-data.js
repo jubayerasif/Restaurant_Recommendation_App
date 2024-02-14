@@ -1,20 +1,20 @@
-const path = require('path');
-const fs = require('fs');
+// Core Node.js modules for file and directory paths, and file system operations
+const path = require("path");
+const fs = require("fs");
 
-const filePath = path.join(__dirname, '..', 'data', 'restaurants.json');
+// File path for JSON data
+const filePath = path.join(__dirname, "..", "data", "restaurants.json");
 
+// Read stored restaurants from JSON file
 function getStoredRestaurants() {
-  const fileData = fs.readFileSync(filePath);
-  const storedRestaurants = JSON.parse(fileData);
-
-  return storedRestaurants;
+  const fileData = fs.readFileSync(filePath); // Read synchronously
+  return JSON.parse(fileData); // Parse JSON and return
 }
 
+// Store restaurants data to JSON file
 function storeRestaurants(storableRestaurants) {
-  fs.writeFileSync(filePath, JSON.stringify(storableRestaurants));
+  fs.writeFileSync(filePath, JSON.stringify(storableRestaurants)); // Write synchronously
 }
 
-module.exports = {
-  getStoredRestaurants: getStoredRestaurants,
-  storeRestaurants: storeRestaurants
-};
+// Export functions
+module.exports = { getStoredRestaurants, storeRestaurants };

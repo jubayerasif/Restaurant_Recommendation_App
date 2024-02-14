@@ -1,7 +1,9 @@
+/* Main Element */
 main {
   max-width: 40rem;
 }
 
+/* Form Styling */
 form {
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
   padding: 1rem;
@@ -9,14 +11,18 @@ form {
   text-align: left;
 }
 
+/* Form Control Styling */
 .form-control {
   margin-bottom: 0.75rem;
 }
 
+/* Label Styling */
 label {
   color: rgb(80, 57, 7);
   margin-bottom: 0.25rem;
 }
+
+/* Label, Input, Textarea Styling */
 label,
 input,
 textarea {
@@ -24,6 +30,7 @@ textarea {
   width: 100%;
 }
 
+/* Input, Textarea Styling */
 input,
 textarea {
   font: inherit;
@@ -39,6 +46,7 @@ textarea:focus {
   background-color: rgb(252, 234, 197);
 }
 
+/* Button Styling */
 button {
   cursor: pointer;
   padding: 0.5rem 1.5rem;
